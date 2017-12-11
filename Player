@@ -31,14 +31,14 @@ public abstract class Player {
 		return true;
 	}
 	
-	public boolean isWinner() {
+	public boolean isWinner() { //determines winner depending on whether the score is greater than or equal to 100 or not
 		if(sk.getGameTotal() >= 100) {
 			return true;
 		}
 		return false;
 	}
 
-	public String getName() {
+	public String getName() { //getter (gets name of Player)
 		return name;
 	}
 	
