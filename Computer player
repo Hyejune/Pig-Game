@@ -1,6 +1,6 @@
-public class ComputerPlayer extends Player {
+public class ComputerPlayer extends Player { //inherits from superclass Player
 	public ComputerPlayer(String name, PairOfDice pod) {
-		super(name, pod);
+		super(name, pod); //inherits values from superclass
 	}
 	
 	@Override
