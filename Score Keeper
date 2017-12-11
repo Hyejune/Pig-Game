@@ -1,34 +1,34 @@
 public class ScoreKeeper {
-	private int gametotal;
-	private int roundtotal;
+	private int gametotal; //total score
+	private int roundtotal; //score at the end of each round
 	
-	public ScoreKeeper() {
+	public ScoreKeeper() { //default constructor sets values of field variables to 0
 		gametotal = roundtotal = 0;
 	}
 	
 	public void addToGameTotal() {
-		gametotal += roundtotal;
+		gametotal += roundtotal; //adds round total to game total
 		resetRoundTotal();
 	}
 	
 	public void addToRoundTotal(int value) {
-		roundtotal += value;
+		roundtotal += value; //adds value rolled from dice to round total
 	}
 
-	public void resetGameTotal() {
+	public void resetGameTotal() { //method implemented to reset game total to 0 when a 1 is rolled
 		gametotal = 0;
 		resetRoundTotal();
 	}
 
-	public void resetRoundTotal() {
+	public void resetRoundTotal() { //method sets value of round total to 0
 		roundtotal = 0;
 	}
 
-	public int getRoundTotal() {
+	public int getRoundTotal() { //method gets value of round total
 		return roundtotal;
 	}
 
-	public int getGameTotal() {
+	public int getGameTotal() { //method gets value of game total
 		return gametotal;
 	}
 }
