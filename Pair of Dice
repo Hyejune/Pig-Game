@@ -2,35 +2,35 @@ public class PairOfDice {
 	Die d1;
 	Die d2;
 	
-	public PairOfDice() {
+	public PairOfDice() { //creates a new pair of dice
 		d1 = new Die();
 		d2 = new Die();
 	}
 	
-	public void roll() {
+	public void roll() { //uses roll() method from Die class
 		d1.roll();
 		d2.roll();
 	}
 	
-	public boolean hasTwoOnes() {
+	public boolean hasTwoOnes() { //checks if both dice rolled 1
 		if(d1.getValue() == 1 && d2.getValue() == 1) {
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean hasOneOne() {
+	public boolean hasOneOne() { //checks if either dice rolled 1
 		if(d1.getValue() == 1 || d2.getValue() == 1) {
 			return true;
 		}
 		return false;
 	}
 	
-	public int totalValue() {
+	public int totalValue() { //adds up values rolled from pair of dice
 		return (d1.getValue() + d2.getValue());
 	}
 	
-	public String toString() {
+	public String toString() { //returned the values rolled from pair of dice
 		String d1string = d1.toString();
 		String d2string = d2.toString();
 		return d1string + "\n" + d2string;
