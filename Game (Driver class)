@@ -1,18 +1,18 @@
-import java.util.Scanner;
+import java.util.Scanner; //takes input value
 public class Game {
 	private Player p1;
-	private Player p2;
+	private Player p2; //field variables
 	
-	public Game() {
+	public Game() { //default constructor
 		
-		Scanner s = new Scanner(System.in);
+		Scanner s = new Scanner(System.in); //takes Scanner input
 		System.out.println("How many human players? [1/2]");
-		int i = s.nextInt();
-		while(i != 1 && i != 2) {
+		int i = s.nextInt(); //int i takes the input value
+		while(i != 1 && i != 2) { //asks for number of human players greater than 2
 			System.out.println("How many human players? [1/2]");
 			i = s.nextInt();
 		}
-		PairOfDice pod = new PairOfDice();
+		PairOfDice pod = new PairOfDice(); //creates new object from PairOfDice class
 		p1 = new HumanPlayer("Player 1", pod);
 		if(i == 2) {
 			p2 = new HumanPlayer("Player 2", pod);
