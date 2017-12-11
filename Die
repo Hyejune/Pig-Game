@@ -1,15 +1,15 @@
 public class Die {
 private int value;
 	
-	public Die() {
+	public Die() { //default constructor
 		value = 0;
 	}
 	
-	public void roll() {
-		value = (int)(Math.random()*6+1);
+	public void roll() { 
+		value = (int)(Math.random()*6+1); //I changed code here to use the Math.random() method to get a value from die
 	}
 	
-	public int getValue() {
+	public int getValue() { //getter(accessor) method
 		return value;
 	}
 	
@@ -21,9 +21,9 @@ private int value;
 	
 	
 	public static void main(String[] args) {
-		Die d = new Die();
-		d.roll();
-		String thedie = d.toString();
-		System.out.println(thedie);
+		Die d = new Die(); //creates new Die object
+		d.roll(); //gets a random value from rolling die
+		String thedie = d.toString(); //creates new String
+		System.out.println(thedie); //prints value rolled by player
 	}
 }
