@@ -1,19 +1,19 @@
 import java.util.Scanner;
-public class HumanPlayer extends Player {
+public class HumanPlayer extends Player { //HumanPlayer is subclass of superclass Player
 	public HumanPlayer(String name, PairOfDice pod) {
-		super(name, pod);
+		super(name, pod); //inherits values from Player class
 	}
 	
 	@Override
-	public boolean rollAgain() {
+	public boolean rollAgain() { //overrides public abstract boolean rollAgain() from Player class
 		Scanner s = new Scanner(System.in);
 		System.out.println("Would you like to roll again [y/n]? ");
-		String response = s.nextLine();
-		while(!response.equals("y") && !response.equals("n")) {
+		String response = s.nextLine(); //takes Scanner input
+		while(!response.equals("y") && !response.equals("n")) { //asks again when player responds with something other than y or n
 			System.out.println("Would you like to roll again [y/n]? ");
 			response = s.nextLine();			
 		}
-		if(response.equals("y")) {
+		if(response.equals("y")) { //if player responds with y, player rolls again
 			return true;
 		}
 		// TODO Auto-generated method stub
@@ -21,7 +21,7 @@ public class HumanPlayer extends Player {
 	}
 	
 	public static void main(String[] args) {
-		HumanPlayer hp = new HumanPlayer("Bob", new PairOfDice());
+		HumanPlayer hp = new HumanPlayer("Bob", new PairOfDice()); //creates new human player Bob
 		System.out.println(hp.rollAgain());
 	}
 }
