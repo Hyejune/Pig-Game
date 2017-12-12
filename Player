@@ -3,7 +3,7 @@ public abstract class Player {
 	protected String name;
 	protected ScoreKeeper sk;
 	
-	public Player(String name, PairOfDice pod) {
+	public Player(String name, PairOfDice pod) { //constructor
 		this.name = name;
 		this.pod = pod;
 		sk = new ScoreKeeper();
@@ -12,18 +12,18 @@ public abstract class Player {
 	public abstract boolean rollAgain();
 	
 	public boolean rollDice() {
-		pod.roll();
+		pod.roll(); // returns two random values from 1 to 6
 		System.out.println(pod);
-		if(pod.hasOneOne() == false) {
+		if(pod.hasOneOne() == false) { //adds to round total if dice don't roll a one
 			sk.addToRoundTotal(pod.totalValue());
-			if(sk.getRoundTotal() + sk.getGameTotal() >= 100) {
+			if(sk.getRoundTotal() + sk.getGameTotal() >= 100) { //if game total becomes greater than or equal to 0 in a round, player will not roll dice
 				return false;
 			}
-		} else if(pod.hasTwoOnes() == true) {
+		} else if(pod.hasTwoOnes() == true) { //prints statement that player rolled two ones and resets game total to 0 when two ones are rolled
 			System.out.println("You rolled two ones.");
 			sk.resetGameTotal();
 			return false;
-		} else {
+		} else { //prints statement that player rolled a one and resets game total to 0 when player rolls a one
 			System.out.println("You rolled a one.");
 			sk.resetRoundTotal();
 			return false;
@@ -42,11 +42,11 @@ public abstract class Player {
 		return name;
 	}
 	
-	public void endRound() {
+	public void endRound() { //adds to the game total when round ends
 		sk.addToGameTotal();
 	}
 	
-	public int getGameTotal() {
+	public int getGameTotal() { //gets game total
 		return sk.getGameTotal();
 	}
 }
