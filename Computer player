@@ -4,10 +4,10 @@ public class ComputerPlayer extends Player { //inherits from superclass Player
 	}
 	
 	@Override
-	public boolean rollAgain() {
-		if(sk.getRoundTotal() < 20) {
+	public boolean rollAgain() { //overrides public abstract boolean rollAgain() from Player class
+		if(sk.getRoundTotal() < 20) { //if round total is less than 20, computer will always roll again
 			return true;
 		}
-		return false;
+		return false; //if round total is greater than or equal to 20, computer will stop rolling
 	}
 }
