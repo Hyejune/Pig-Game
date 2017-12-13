@@ -43,19 +43,19 @@ public class Game {
 				}			
 			}
 			curplayer.endRound();
-			System.out.println("Total Score of " + curplayer.getName() + ": " + curplayer.getGameTotal());
+			System.out.println("Total Score of " + curplayer.getName() + ": " + curplayer.getGameTotal()); //shows score and name of player when a player wins
 			System.out.println("*************");
-			if(!curplayer.isWinner()) {
+			if(!curplayer.isWinner()) { //switches player when round ends but player is not the winner
 				System.out.println("Switching players");
 			}
-			if(curplayer == p1) {
-				curplayer = p2;
+			if(curplayer == p1) { 
+				curplayer = p2; //if previous player was p1, it switches to another player
 			} else {
-				curplayer = p1;
+				curplayer = p1; //if previous player was not p1, it switches to p1
 			}	
 		}
 		
-		if(p1.isWinner()) {
+		if(p1.isWinner()) { //tells who the winner is
 			System.out.println(p1.getName() + " wins!");
 		} else {
 			System.out.println(p2.getName() + " wins!");
